@@ -1,0 +1,661 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+ font-family: Tahoma , Arial;
+ background-color: rgb(2, 2, 31);
+}
+
+.navbar {
+    display: flex;
+    position: sticky;
+    width: 75vw;
+    padding: 15px;
+    background-color: rgb(4, 38, 67);
+    border-radius: 15px;
+    top: 7%;
+    left: 13%;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+
+.ion-circle{
+    display: none;
+    width: 50px;
+    fill: white;
+}
+
+.ion-circle:hover{
+    animation-name: rotate-circle;
+    animation-duration: 0.5s;
+}
+
+.logo {
+    width: 170px;
+
+}
+
+.buttons {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    font-size: 20px;
+
+}
+
+
+.home {
+    color: white;
+    text-transform: uppercase;
+    text-decoration-line: none;
+    cursor: pointer;
+}
+
+.home:hover{
+    border-bottom: aqua solid 2px;
+
+}
+
+.about-us {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.about-us:hover {
+    border-bottom: aqua solid 2px;
+}
+
+.buying {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: aqua solid 2px;
+
+    cursor: pointer;
+}
+
+
+
+
+.selling {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.selling:hover {
+    border-bottom: aqua solid 2px;
+}
+
+.contact-us {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.contact-us:hover {
+    border-bottom: 2px solid aqua;
+}
+
+.contact{
+    width: 120px;
+}
+
+
+.login-form {
+    display: flex;
+    width: 250px;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.login {
+    border: none;
+    background: none;
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.sign-up {
+    padding: 10px;
+    border: none;
+    background-color: aqua;
+    color: black;
+    border-radius: 10px;
+    font-size: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    height: 32vw;
+    margin: auto;
+    background-color: rgb(4, 38, 67);
+    gap: 150px;
+}
+
+.slide-form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.slider-container {
+    margin: 120px 120px 0px;
+    width: 80%;
+    height: 300px;
+    position: relative;
+    z-index: 1;
+    
+}
+
+.slider-container > img {
+    position: absolute;
+    opacity: 0;
+    width: 110%;
+    height: 300px;
+    transition: opacity 1s;
+    z-index: 1;
+  
+}
+
+.slider-container img.active {
+    opacity: 1;
+}
+
+.slider-container .slide-number {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 20px;
+    z-index: 2;
+    border-radius: 6px;
+}
+
+.slider-controls {
+    width: 60%; 
+   padding: 0px 400px 0px;
+    display: flex;
+   
+}
+
+.slider-controls .prev,
+.slider-controls .next {
+    background-color: #009688;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px; 
+    padding: 5px;
+    user-select: none;
+    width: 40%;
+}
+
+.slider-controls {
+    gap: 50px;
+    padding: 20px 80px 0px;
+    margin-left: 120px;
+    
+}
+
+.slider-controls .indicators {
+   text-align: center;
+}
+
+.slider-controls .indicators ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+}
+
+.slider-controls .indicators ul li {
+    display: inline-block;
+    background-color: #fff;
+    color: #333;
+    font-weight: bold;
+    height: 28px;
+    width: 28px;
+    border-radius: 4px;
+    margin: 0 2px;
+    line-height: 28px;
+    cursor: pointer;
+}
+
+.slider-controls .indicators ul li.active {
+    background-color: #009688;
+    color: #fff;
+}
+
+
+.form-container {
+    background-color: white;
+    padding: 60px 20px 0px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 25%;
+    height: 400px;
+    margin-top: 7%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-in-out;
+}
+
+.form-container.show , .form-container.show h2 , .form-container.show input , .form-container.show button {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.form-container input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.form-container button:hover {
+    background-color: #0056b3;
+}
+
+.text-container{
+    display: flex;
+    width: 80%;
+    height: 15vw;
+    margin: auto;
+    background-color: rgb(4, 38, 67);
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+}
+
+.text > h1{
+    color: white;
+    font-size: 25px;
+    padding: 20px 120px 0px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-in-out;
+}
+
+.text > h2{
+    color: white;
+    font-size: 15px;
+    padding: 20px 120px 0px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-in-out;
+}
+
+.text > .price{
+    color: white;
+    font-size: 35px;
+    padding: 20px 120px 0px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-in-out;
+}
+
+.text > .prop{
+    color: white;
+    font-size: 15px;
+    padding: 20px 120px 0px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-in-out;
+}
+
+.adress {
+    display: flex;
+   padding: 40px 0px 0px;
+    width: 100px;
+    height: 100px;
+}
+
+.adress > img{
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-in-out;
+}
+
+.adress img:hover {
+    animation: hover3d 0.5s ease-in-out forwards;
+    cursor: pointer;
+  }
+  
+  @keyframes hover3d {
+    0% {
+      transform: rotateY(0deg) rotateX(0deg);
+    }
+    50% {
+      transform: rotateY(20deg) rotateX(25deg);
+    }
+    100% {
+      transform: rotateY(0deg) rotateX(0deg);
+    }
+  }
+
+.text > h1.show , .text > h2.show , .text > .price.show , .text > .prop.show , .adress > img.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.circle {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #009688;
+    border-radius: 50%;
+   margin: 30px 95px 0px;
+}
+
+footer {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    background-color: #121b25;
+    padding: 20px 10px 100px;
+    gap: 50px;
+    border-top: aliceblue solid 3px;
+}
+
+.copyright {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    padding: 80px;
+    gap: 10px;
+    font-size: 18px;
+    color: aliceblue;
+}
+
+.logo-02 {
+    width: 220px;
+    height: 80px;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+    padding: 90px 20px 0px;
+    width: 15%;
+    gap: 20px;
+    font-size: 25px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    transform: translateY(20px);
+}
+
+.popup {
+    position: fixed;
+    top: 3%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #0056b3;
+    color: white;
+    width: 200px;
+    padding: 15px 40px 15px;
+    border-radius: 5px;
+    z-index: 1000;
+    display: none;
+}
+
+
+
+.projects.show {
+    animation: fadeInUp 0.8s ease-in-out forwards;
+}
+
+.projects > h3 {
+    font-size: 20px;
+    position: relative; 
+    transition: all 0.3s ease; 
+}
+
+.projects > h3:hover {
+    cursor: pointer;
+    color: #00FFFF;
+   text-decoration: none; 
+}
+
+.projects > h3:hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transition: all 0.3s ease; 
+}
+
+
+
+
+.contact-us-footer {
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+    color: aliceblue;
+    padding: 90px 20px 0px;
+    gap: 20px;
+    align-items: center;
+    transition: transform 0.2s;
+    transform: translateY(20px);
+}
+
+.contact-us-footer.show{
+    animation: fadeInUp 0.8s ease-in-out forwards;
+}
+
+
+.phone{
+    display: flex;
+    padding: 0px 20px 0px;
+}
+
+.phone img{
+    width: 50px;
+    height: 50px;
+}
+
+.phone h3{
+    padding: 10px 15px 0px;
+}
+
+.gmail{
+    display: flex;
+    padding: 20px 20px 0px;
+   
+}
+
+.gmail img{
+    width: 50px;
+    height: 50px;
+}
+
+.gmail h3{
+    padding: 10px 15px 0px;
+    font-size: 20px;
+}
+
+.facebook-logo{
+    display: flex;
+    padding: 20px 22px 0px;
+}
+
+.facebook-logo img{
+    width: 50px;
+    height: 50px;
+}
+
+.facebook-logo h3{
+    padding: 10px 15px 0px;
+    font-size: 20px;
+}
+
+
+@media(min-width:120px) and (max-width:870px) {
+    .buttons {
+        display: none;
+    }
+    @keyframes rotate-circle {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(-90deg);
+        }
+    }
+    
+    .ion-circle {
+        display: block;
+        width: 30px;
+        cursor: pointer;
+        color: white;
+        transition: transform 0.5s ease;
+    }
+
+    .navbar {
+        display: flex;
+        position: sticky;
+        width: 80vw;
+        padding: 10px;
+        left: 10%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .urban-nest {
+        width: 80px;
+        height: 30px;
+    }
+}
+
+@media (min-width: 870px) and (max-width:1100px){
+    .ion-circle {
+        display: none;
+    }
+    .navbar {
+        width: 90vw;
+        padding: 15px;
+        left: 7%;
+        justify-content: space-evenly;
+    }
+
+    .urban-nest {
+        width: 120px;
+    
+    }
+
+    .buttons { 
+        gap: 10px;
+        padding-left: 30px;
+        font-size: 15px;
+    
+    }
+
+    .contact-us , .about-us {
+     width: 120px;
+     padding-left:  20px; 
+    }
+
+    .login-form {
+        width: 200px;
+        gap: 10px;
+    }
+
+    .login {
+        font-size: 15px;
+    }
+    
+    .sign-up {
+        padding: 8px;  
+        font-size: 15px;
+    }
+}
+
+@media (min-width:1101px) and (max-width:1700px){
+    .ion-circle {
+        display: none;
+    }
+    .navbar {
+        width: 85vw;
+        padding: 15px;
+        left: 8%;
+      
+    }
+
+    .urban-nest {
+        width: 120px;
+    
+    }
+
+    .buttons { 
+        gap: 20px;
+        padding-left: 30px;
+        font-size: 17px;
+    
+    }
+
+    .contact-us {
+     width: 130px;
+    }
+
+    .login-form {
+        width: 200px;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login {
+        font-size: 20px;
+    }
+    
+    .sign-up {
+        padding: 8px;
+        border-radius: 10px;
+        font-size: 20px;
+    }
+}

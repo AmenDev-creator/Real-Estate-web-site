@@ -1,0 +1,145 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-image: url(bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 10%;
+}
+
+.error-message {
+    display: none; 
+    color: white;
+    background-color: red;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.form-box {
+    width: 400px;
+    padding: 30px 10px 70px;
+    background: #f1f7fe;
+    overflow: hidden;
+    border-radius: 16px;
+    color: #010101;
+    margin: auto;
+    
+}
+
+.form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 24px 24px;
+    gap: 30px;
+    text-align: center;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #666;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #fff;
+    width: 100%;
+}
+
+.input {
+    background: none;
+    border: 0;
+    outline: 0;
+    height: 40px;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    font-size: .9rem;
+    padding: 8px 15px;
+    margin-bottom: 20px; 
+}
+
+.check {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+}
+
+.form button {
+    background-color: #0066ff;
+    color: #fff;
+    border: 0;
+    border-radius: 24px;
+    padding: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color .3s ease;
+}
+
+.form button:hover {
+    background-color: #005ce6;
+}
+
+.forgot-password {
+    font-size: 15px; 
+    color: #0066ff; 
+    text-decoration: none; 
+    margin-top: 10px;
+    font-weight: bold;
+    transition: color 0.3s ease; 
+}
+
+.forgot-password:hover {
+    color: #005ce6; 
+    text-decoration: underline 2px; 
+}
+
+@media (max-width: 600px) {
+    .form-box {
+        width: 95%;
+        padding: 20px 10px 40px;
+    }
+    
+    .title {
+        font-size: 1.5rem;
+    }
+    
+    .subtitle {
+        font-size: 0.85rem;
+    }
+    
+    .form {
+        padding: 20px;
+        gap: 15px;
+    }
+    
+    .form button {
+        padding: 12px;
+    }
+}
+
+
+@media(min-width:180px) and (max-width:1345px){
+    body{
+      background-image: url(bg.jpg);
+      background-size: cover;
+      height: 100vh;
+      background-repeat: no-repeat;
+      margin-top: 10%;
+  }
+  }

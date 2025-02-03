@@ -1,0 +1,554 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+body {
+    background-color: rgb(2, 2, 31);
+}
+
+
+.navbar {
+    display: flex;
+    position: sticky;
+    width: 75vw;
+    padding: 15px;
+    background-color: rgb(4, 38, 67);
+    border-radius: 15px;
+    top: 5%;
+    left: 13%;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+
+.ion-circle{
+    display: none;
+    width: 50px;
+    fill: white;
+}
+
+.ion-circle:hover{
+    animation-name: rotate-circle;
+    animation-duration: 0.5s;
+}
+
+.logo {
+    width: 170px;
+
+}
+
+.buttons {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    font-size: 20px;
+
+}
+
+
+.home {
+    color: white;
+    text-transform: uppercase;
+    text-decoration-line: none;
+    cursor: pointer;
+}
+
+.home:hover {
+    border-bottom: aqua solid 2px;
+}
+
+
+.about-us {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.about-us:hover{
+    border-bottom: aqua solid 2px;
+}
+
+.buying {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.buying:hover {
+    border-bottom: aqua solid 2px;
+}
+
+
+.selling {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.selling:hover {
+    border-bottom: aqua solid 2px;
+}
+
+.contact{
+    width: 120px;
+}
+
+.contact-us {
+    color: white;
+    text-transform: uppercase;
+    width: fit-content;
+    text-decoration: none;
+    border-bottom: 2px solid aqua;
+    cursor: pointer;
+
+}
+
+
+.login-form {
+    display: flex;
+    width: 250px;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.login {
+    border: none;
+    background: none;
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.sign-up {
+    padding: 10px;
+    border: none;
+    background-color: aqua;
+    color: black;
+    border-radius: 10px;
+    font-size: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    height: 60vw;
+    margin: auto;
+    background-color: rgb(4, 38, 67);
+  
+}
+
+.text-form{
+    width: 55%;
+}
+
+.title{
+    color: white;
+    padding: 110px 180px 0px;
+    font-size: 30px;
+}
+
+.text-form > p{
+    padding: 60px 40px 0px;
+    font-size: 25px;
+    color: rgba(255, 255, 255, 0.695);
+}
+
+.icons{
+    display: flex;
+    padding: 40px 0px 0px;
+}
+
+.icon-phone img{
+    width: 50px;
+    height: 50px;
+}
+
+.icon-phone {
+    display: flex;
+    padding: 30px;
+}
+
+.icon-phone h3{
+    color: white;
+    padding: 20px 15px 0px;
+    font-size: 20px;
+}
+
+.gmail-icon{
+    display: flex;
+    padding: 30px 20px 0px;
+}
+
+.gmail-icon img{
+    width: 50px;
+    height: 50px;
+}
+
+.gmail-icon h3{
+    padding: 15px 15px 0px;
+    color: white;
+}
+
+.facebook{
+    display: flex;
+    padding: 20px 170px 0px;
+}
+
+.facebook img{
+    width: 50px;
+    height: 50px;
+}
+
+.facebook h3{
+    padding: 15px 15px 0px;
+    color: white;
+}
+
+
+.form-container {
+    background-color: white;
+    padding: 60px 20px 0px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 25%;
+    height: 430px;
+    opacity: 0;
+    margin-top: 9%;
+    margin-left: 7%;
+    transform: translateY(20px);
+    transition: all 0.8s ease-in-out;
+}
+
+.form-container.show , .form-container.show h2 , .form-container.show input , .form-container.show button {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.message-input input {
+    padding: 40px;
+}
+
+.form-container input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.form-container button:hover {
+    background-color: #0056b3;
+}
+
+.popup {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #0056b3;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    z-index: 1000;
+    display: none;
+}
+
+.adress {
+    display: flex;
+   padding: 120px 60px 0px;
+    width: 200px;
+    height: 200px;
+}
+
+.adress > img{
+    width: 200px;
+    height: 200px;
+    
+    transform: translateY(20px);
+    transition: all 0.8s ease-in-out;
+}
+
+.adress img:hover {
+    animation: hover3d 0.5s ease-in-out forwards;
+    cursor: pointer;
+  }
+  
+  @keyframes hover3d {
+    0% {
+      transform: rotateY(0deg) rotateX(0deg);
+    }
+    50% {
+      transform: rotateY(20deg) rotateX(25deg);
+    }
+    100% {
+      transform: rotateY(0deg) rotateX(0deg);
+    }
+  }
+
+  footer {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    background-color: #121b25;
+    padding: 20px 10px 100px;
+    gap: 50px;
+    border-top: aliceblue solid 3px;
+}
+
+.copyright {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    padding: 80px;
+    gap: 10px;
+    font-size: 18px;
+    color: aliceblue;
+}
+
+.logo-02 {
+    width: 220px;
+    height: 80px;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+    padding: 90px 20px 0px;
+    width: 15%;
+    gap: 20px;
+    font-size: 25px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    transform: translateY(20px);
+}
+
+.projects > h3 {
+    font-size: 20px;
+    position: relative; 
+    transition: all 0.3s ease; 
+}
+
+.projects > h3:hover {
+    cursor: pointer;
+    color: #00FFFF;
+   text-decoration: none; 
+}
+
+.projects > h3:hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transition: all 0.3s ease; 
+}
+
+
+
+.contact-us-footer {
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+    color: aliceblue;
+    padding: 110px 20px 0px;
+    gap: 20px;
+    align-items: center;
+}
+
+
+
+
+
+.phone{
+    display: flex;
+}
+
+.phone img{
+    width: 50px;
+    height: 50px;
+}
+
+.phone h3{
+    padding: 10px 15px 0px;
+}
+
+.gmail{
+    display: flex;
+    padding: 20px 0px 0px;
+}
+
+.gmail img{
+    width: 50px;
+    height: 50px;
+}
+
+.gmail h3{
+    padding: 10px 15px 0px;
+    font-size: 20px;
+}
+
+.facebook-logo{
+    display: flex;
+    padding: 20px 0px 0px;
+}
+
+.facebook-logo img{
+    width: 50px;
+    height: 50px;
+}
+
+.facebook-logo h3{
+    padding: 10px 15px 0px;
+    font-size: 20px;
+}
+
+@media(min-width:120px) and (max-width:870px) {
+    .buttons {
+        display: none;
+    }
+   
+    
+    .ion-circle {
+        display: block;
+        width: 30px;
+        cursor: pointer;
+        color: white;
+        transition: transform 0.5s ease;
+    }
+
+    .navbar {
+        display: flex;
+        position: sticky;
+        width: 80vw;
+        padding: 10px;
+        left: 10%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .urban-nest {
+        width: 80px;
+        height: 30px;
+    }
+}
+
+@media (min-width: 870px) and (max-width:1100px){
+    .ion-circle {
+        display: none;
+    }
+    .navbar {
+        width: 90vw;
+        padding: 15px;
+        left: 7%;
+        justify-content: space-evenly;
+    }
+
+    .urban-nest {
+        width: 120px;
+    
+    }
+
+    .buttons { 
+        gap: 10px;
+        padding-left: 30px;
+        font-size: 15px;
+    
+    }
+
+    .contact-us , .about-us {
+     width: 120px;
+     padding-left:  20px; 
+    }
+
+    .login-form {
+        width: 200px;
+        gap: 10px;
+    }
+
+    .login {
+        font-size: 15px;
+    }
+    
+    .sign-up {
+        padding: 8px;  
+        font-size: 15px;
+    }
+}
+
+@media (min-width:1101px) and (max-width:1700px){
+    .ion-circle {
+        display: none;
+    }
+    .navbar {
+        width: 85vw;
+        padding: 15px;
+        left: 8%;
+      
+    }
+
+    .urban-nest {
+        width: 120px;
+    
+    }
+
+    .buttons { 
+        gap: 20px;
+        padding-left: 30px;
+        font-size: 17px;
+    
+    }
+
+    .contact-us {
+     width: 130px;
+    }
+
+    .login-form {
+        width: 200px;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login {
+        font-size: 20px;
+    }
+    
+    .sign-up {
+        padding: 8px;
+        border-radius: 10px;
+        font-size: 20px;
+    }
+}
